@@ -17,5 +17,4 @@ resource "aws_launch_configuration" "asg-launch-webserver" {
   lifecycle {
     create_before_destroy = true
   }
- 
 }
