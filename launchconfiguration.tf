@@ -4,7 +4,7 @@ resource "aws_launch_configuration" "asg-launch-webserver" {
   key_name = "newkey"
   security_groups = ["${aws_security_group.webserver_sg.id}"]
   
-  user_data = <<- EOF
+  user_data = <<-EOF
               #!/bin/bash
               sudo yum install httpd -y
               sudo systemctl start httpd 
