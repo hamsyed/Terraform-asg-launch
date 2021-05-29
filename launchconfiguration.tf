@@ -19,4 +19,5 @@ resource "aws_launch_configuration" "asg-launch-webserver" {
   
   tags = {
     Name = "${terraform.workspace}"
+  }
 }
