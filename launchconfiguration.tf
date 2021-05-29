@@ -1,4 +1,5 @@
 resource "aws_launch_configuration" "asg-launch-webserver" {
+  name = "webserver-${terraform.workspace}"
   image_id          = "${var.ami}"
   instance_type = "${var.instance_type}"
   key_name = "terraform"
@@ -16,8 +17,5 @@ resource "aws_launch_configuration" "asg-launch-webserver" {
   lifecycle {
     create_before_destroy = true
   }
-  
-  tags = {
-    Name = "${terraform.workspace}"
-  }
+ 
 }
